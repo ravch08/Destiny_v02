@@ -1,0 +1,41 @@
+footer {
+    padding: 5rem 0;
+    background-color: $color-light-100;
+
+    nav {
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ftr-link {
+        color: $color-Dark-400;
+        padding: 0 1.2rem;
+    }
+
+    img {
+        width: 4rem;
+        border-radius: 50%;
+    }
+
+    p {
+        font-size: $fs-icons;
+        letter-spacing: 0.1rem;
+        color: lighten($color: $color-Dark-400, $amount: 20%);
+    }
+}
+
+.scroll-top {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 5rem;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    opacity: 1;
+    fill: $color-light-100;
+    @extend .flexRow-center;
+    @include transition(opacity, 0.3s);
+    background-color: $color-primary;
+}

@@ -1,0 +1,39 @@
+#testimonials {
+
+    .swiper-slide {
+        padding-bottom: 3.5rem;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 8.5rem;
+    }
+
+    p {
+        width: 60%;
+        left: 50%;
+        position: relative;
+        margin: 2rem 0 3rem;
+        transform: translateX(-50%);
+    }
+
+    small {
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+
+    svg {
+        fill: goldenrod;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $color-primary;
+}
+
+@media screen and (max-width: 1024px) {
+
+    #testimonials p {
+        width: 95%;
+    }
+}

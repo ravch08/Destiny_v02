@@ -1,0 +1,64 @@
+// Font Variables -------- fm - Font Family -- fs - Font Size -- fw - Font Weight -------
+
+$fm-body : "Poppins",
+sans-serif;
+
+$fm-primary : 'Poppins',
+sans-serif;
+
+$fs-h1 : 6rem;
+$fs-h2 : 3rem;
+$fs-h3 : 2rem;
+$fs-h4 : 1.8rem;
+$fs-h5 : 1.5rem;
+$fs-h6 : 1.2rem;
+
+$fs-btn : 1.4rem;
+$fs-body : 1.4rem;
+$fs-icons : 1.2rem;
+$fs-topbar : 1.2rem;
+$fs-subheading : 1.5rem;
+
+// -- Line Height - lh -------------------------------------------------------------------
+
+$lh-body : 1.7;
+$lh-heading : 1.2;
+
+// Color Variables -----------------------------------------------------------------------
+
+$color-gradient1: linear-gradient(to right, #fffffff1, transparent);
+$color-gradient2: linear-gradient(to right, #000000c4, transparent);
+
+$color-scrollbar : #eee;
+$color-scrollThumb : #5924EC;
+
+$color-primary : #5924EC;
+$color-secondary : #111111;
+
+$color-light-100 : #fff;
+$color-light-400 : #f0f0f0;
+$color-light-800 : #e6e6e6;
+
+$color-Dark-100 :#808080;
+$color-Dark-400 : #444444;
+$color-Dark-800 : #000000;
+
+$color-footerBar : #202020;
+
+$color-body : #111111;
+
+$color-btn-primary :#00b2ff;
+$color-btn-secondary :#EFE3D9;
+
+// Dimensions Variables ------------------------------------------------------------------
+
+$width-container : 1140px;
+$section-padding : 8rem;
+
+// Box Shadow ----------------------------------------------------------------------------
+
+$box-shadow-lg: 0 1rem 3rem rgba(black, .175);
+$box-shadow-md: 0 .5rem 1rem rgba(black, .15);
+$box-shadow-sm: 0 .125rem .25rem rgba(black, .075);
+
+// ----------------------------------------------------------------------------
