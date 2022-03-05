@@ -3,6 +3,7 @@
 const header = document.querySelector('header');
 const closeBtn = document.querySelector('.close');
 const sidebar = document.querySelector('.sidebar');
+const fadeIns = document.querySelectorAll('.fade-in');
 const scrollTop = document.querySelector('.scroll-top');
 const bannerSection = document.querySelector('#banner');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
@@ -23,6 +24,11 @@ hamburgerMenu.addEventListener('click', openSidebar);
 
 const options = {
     threshold: 1
+};
+
+const appearOptions = {
+    threshold: 0.8,
+    rootMargin: '-100px 0px -100px 0px'
 };
 
 const headerObserver = new IntersectionObserver(entries => {
@@ -48,10 +54,26 @@ const scrollObserver = new IntersectionObserver(entries => {
     });
 }, options);
 
+let appearObserver = new IntersectionObserver(function (entries) {
+
+    entries.forEach(entry => {
+
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add('appear');
+            appearObserver.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
+
 
 headerObserver.observe(bannerSection);
 scrollObserver.observe(bannerSection);
 
+fadeIns.forEach(fadeIn => {
+    appearObserver.observe(fadeIn);
+});
 
 
 

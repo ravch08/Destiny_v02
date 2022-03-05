@@ -51,6 +51,18 @@ section {
     }
 }
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(5rem);
+    transition: transform 0.6s ease-in, opacity 0.7s ease-in;
+
+    &.appear {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+
 @media screen and (max-width: 768px) {
 
     .section-heading {
