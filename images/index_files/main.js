@@ -20,7 +20,7 @@ closeBtn.addEventListener('click', closeSidebar);
 hamburgerMenu.addEventListener('click', openSidebar);
 
 
-// Intersection Observer --------------------------------------------------------------------------
+// Event Listeners  --------------------------------------------------------------------------
 
 const options = {
     threshold: 1
@@ -76,6 +76,17 @@ fadeIns.forEach(fadeIn => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
 // Event Listeners  --------------------------------------------------------------------------
 
 scrollTop.addEventListener('click', () => {
@@ -85,6 +96,12 @@ scrollTop.addEventListener('click', () => {
         behavior: "smooth"
     });
 });
+
+
+
+
+
+
 
 
 // SWIPER --------------------------------------------------------------------------
