@@ -33,9 +33,9 @@ footer {
     position: fixed;
     bottom: 5%;
     right: 5%;
-    opacity: 1;
+    visibility: visible;
     fill: $color-light-100;
     @extend .flexRow-center;
-    @include transition(opacity, 0.3s);
     background-color: $color-primary;
+    @include transition(visibility, 0.3s);
 }

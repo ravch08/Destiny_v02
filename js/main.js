@@ -47,9 +47,9 @@ const scrollObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
 
         if (!entry.isIntersecting) {
-            scrollTop.style.opacity = '1';
+            scrollTop.style.visibility = 'visible';
         } else {
-            scrollTop.style.opacity = '0';
+            scrollTop.style.visibility = 'hidden';
         };
     });
 }, options);
