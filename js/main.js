@@ -49,7 +49,7 @@ const scrollObserver = new IntersectionObserver(entries => {
         if (!entry.isIntersecting) {
             scrollTop.style.visibility = 'visible';
         } else {
-            scrollTop.style.visibility = 'hidden';
+            scrollTop.style.visibility = '';
         };
     });
 }, options);
