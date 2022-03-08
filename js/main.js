@@ -8,13 +8,8 @@ const scrollTop = document.querySelector('.scroll-top');
 const bannerSection = document.querySelector('#banner');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 
-const openSidebar = () => {
-    sidebar.style.right = '0%';
-};
-
-const closeSidebar = () => {
-    sidebar.style.right = '-100%';
-};
+const openSidebar = () => sidebar.style.right = '0%';
+const closeSidebar = () => sidebar.style.right = '-100%';
 
 closeBtn.addEventListener('click', closeSidebar);
 hamburgerMenu.addEventListener('click', openSidebar);
@@ -33,25 +28,14 @@ const appearOptions = {
 
 const headerObserver = new IntersectionObserver(entries => {
 
-    entries.forEach(entry => {
+    entries.forEach(entry => !entry.isIntersecting ? header.classList.add('sticky') : header.classList.remove('sticky'));
 
-        if (!entry.isIntersecting) {
-            header.classList.add('sticky');
-        } else {
-            header.classList.remove('sticky');
-        };
-    });
 }, options);
 
 const scrollObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
 
-        if (!entry.isIntersecting) {
-            scrollTop.style.visibility = 'visible';
-        } else {
-            scrollTop.style.visibility = '';
-        };
-    });
+    entries.forEach(entry => !entry.isIntersecting ? scrollTop.style.visibility = 'visible' : scrollTop.style.visibility = 'hidden');
+
 }, options);
 
 let appearObserver = new IntersectionObserver(function (entries) {
@@ -65,15 +49,13 @@ let appearObserver = new IntersectionObserver(function (entries) {
             appearObserver.unobserve(entry.target);
         }
     });
+
 }, appearOptions);
 
 
 headerObserver.observe(bannerSection);
 scrollObserver.observe(bannerSection);
-
-fadeIns.forEach(fadeIn => {
-    appearObserver.observe(fadeIn);
-});
+fadeIns.forEach(fadeIn => appearObserver.observe(fadeIn));
 
 
 // Event Listeners  --------------------------------------------------------------------------
@@ -84,6 +66,7 @@ scrollTop.addEventListener('click', () => {
         top: 0,
         behavior: "smooth"
     });
+    
 });
 
 
