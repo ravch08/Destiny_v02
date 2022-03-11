@@ -6,7 +6,10 @@ const sidebar = document.querySelector('.sidebar');
 const fadeIns = document.querySelectorAll('.fade-in');
 const scrollTop = document.querySelector('.scroll-top');
 const bannerSection = document.querySelector('#banner');
+const counterSection = document.querySelector('#counter');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+const counters = document.querySelectorAll('.counter');
 
 const openSidebar = () => sidebar.style.right = '0%';
 const closeSidebar = () => sidebar.style.right = '-100%';
@@ -14,8 +17,11 @@ const closeSidebar = () => sidebar.style.right = '-100%';
 closeBtn.addEventListener('click', closeSidebar);
 hamburgerMenu.addEventListener('click', openSidebar);
 
-
 // Intersection Observer --------------------------------------------------------------------------
+
+const counterOptions = {
+    threshold: 0.4
+};
 
 const options = {
     threshold: 1
@@ -52,9 +58,38 @@ let appearObserver = new IntersectionObserver(function (entries) {
 
 }, appearOptions);
 
+const countingCounters = function (entries, observer) {
+
+    entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+
+            counters.forEach(counter => {
+                counter.innerText = '0';
+                const updateCounter = function () {
+
+                    const target = +counter.getAttribute('data-target');
+                    const c = +counter.innerText;
+                    const increment = target / 200;
+
+                    if (c < target) {
+                        counter.innerText = `${Math.ceil(c + increment)}`;
+                        setTimeout(updateCounter, 5);
+                    } else {
+                        counter.innerText = target;
+                    }
+                }
+                updateCounter();
+            });
+            observer.unobserve(counterSection);
+        }
+    });
+};
+
+const counterObserver = new IntersectionObserver(countingCounters, counterOptions);
 
 headerObserver.observe(bannerSection);
 scrollObserver.observe(bannerSection);
+counterObserver.observe(counterSection);
 fadeIns.forEach(fadeIn => appearObserver.observe(fadeIn));
 
 
@@ -66,7 +101,7 @@ scrollTop.addEventListener('click', () => {
         top: 0,
         behavior: "smooth"
     });
-    
+
 });
 
 

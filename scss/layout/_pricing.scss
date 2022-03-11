@@ -1,108 +1,112 @@
 #pricing {
-    background-color: $color-light-400;
+  background-color: $color-light-400;
 
-    .pricing-list {
-        @extend .flexRow-evenly;
-        flex-wrap: wrap;
-    }
+  .pricing-list {
+    @extend .flexRow-evenly;
+    flex-wrap: wrap;
+  }
 }
 
 .pricing-card {
-    margin: 2rem;
-    padding: 6rem;
-    max-width: 360px;
-    border-radius: 0.8rem;
-    box-shadow: $box-shadow-md;
-    background-color: $color-light-400;
+  margin: 2rem;
+  padding: 6rem;
+  max-width: 360px;
+  border-radius: 0.8rem;
+  box-shadow: $box-shadow-md;
+  background-color: $color-light-400;
 
-    img {
-        width: 6rem;
-    }
+  img {
+    width: 6rem;
+  }
 
-    h3 {
-        margin: 1rem 0 2rem;
-    }
+  h3 {
+    margin: 1rem 0 2rem;
+  }
 
-    span {
-        font-size: $fs-h2;
-        font-weight: 600;
-    }
+  span {
+    font-size: $fs-h2;
+    font-weight: 600;
+  }
 
-    p {
-        font-weight: 200;
-        margin: 1.5rem 0;
-    }
+  p {
+    font-weight: 200;
+    margin: 1.5rem 0;
+  }
 
-    li {
-        padding: 0.5rem 0;
-    }
+  li {
+    padding: 0.5rem 0;
+  }
 
-    .btn-primary {
-        margin-top: 3.5rem;
-    }
+  .btn-primary {
+    margin-top: 3.5rem;
+  }
 }
 
 .counter-wrapper {
-    gap: 8rem;
-    flex-wrap: wrap;
-    @extend .flexRow-center;
+  gap: 8rem;
+  flex-wrap: wrap;
+  @extend .flexRow-center;
 
-    svg {
-        fill: $color-primary;
-    }
+  .counter-item {
+    min-width: 17rem;
+  }
 
-    h3 {
-        font-size: 3.2rem;
-        margin: 0.6rem 0 1.5rem;
-    }
+  svg {
+    fill: $color-primary;
+  }
+
+  h3 {
+    font-size: 3.2rem;
+    margin: 0.6rem 0 1.5rem;
+  }
 }
 
 #clients {
-    padding: 0;
+  padding: 0;
 }
 
 #newsletter {
-    background-color: $color-light-400;
+  background-color: $color-light-400;
 
-    .newsletter-input {
-        @extend .flexRow-center;
+  .newsletter-input {
+    @extend .flexRow-center;
+  }
+
+  input {
+    border: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: $color-light-100;
+
+    &:focus {
+      border: none;
+      outline: none;
     }
 
-    input {
-        border: 0;
-        width: 100%;
-        padding: 1rem;
-        background-color: $color-light-100;
-
-        &:focus {
-            border: none;
-            outline: none;
-        }
-
-        &::placeholder {
-            font-size: $fs-icons;
-        }
+    &::placeholder {
+      font-size: $fs-icons;
     }
+  }
 
-    .btn-newsletter {
-        transform: translateX(-0.4rem);
-    }
+  .btn-newsletter {
+    transform: translateX(-0.4rem);
+  }
 }
-
 
 // -- MEDIA QUERIES ---------------------------------------------------------------------------
 
 @media screen and (max-width: 680px) {
+  .newsletter-input {
+    width: 100%;
+    gap: 1.5rem;
+    flex-direction: column;
+  }
 
-    .newsletter-input {
-        width: 100%;
-        gap: 1.5rem;
-        flex-direction: column;
-    }
+  .pricing-card {
+    padding: 6rem 2rem;
+  }
 
-    .pricing-card {
-        padding: 6rem 2rem;
-    }
+  .counter-wrapper .counter-item {
+    min-width: 12rem;
+  }
 }
-
-@media screen and (max-width: 1.24px) {}
