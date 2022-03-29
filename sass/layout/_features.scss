@@ -1,47 +1,48 @@
-#features {
-    background-color: $color-light-400;
+@use "../abstracts/helper.scss" as h;
 
-    .feature-wrapper {
-        @extend .flexColumn-center;
-        gap: 10rem;
-    }
+#features {
+  background-color: h.$color-light-400;
+
+  .feature-wrapper {
+    @extend .flexColumn-center;
+    gap: 10rem;
+  }
 }
 
 .feature-item {
-    gap: 6rem;
-    @extend .flexRow-between;
+  gap: 6rem;
+  @extend .flexRow-between;
 
-    figure {
-        flex-basis: 50%;
-        // padding: 0 2.5rem;
+  figure {
+    flex-basis: 50%;
+    // padding: 0 2.5rem;
+  }
+
+  .feature-content {
+    flex-basis: 50%;
+    padding: 0 2rem;
+
+    p {
+      margin: 1.5rem 0;
+    }
+  }
+
+  .feature-list {
+    margin-bottom: 2rem;
+
+    li {
+      padding: 0.5rem;
     }
 
-    .feature-content {
-        flex-basis: 50%;
-        padding: 0 2rem;
-
-        p {
-            margin: 1.5rem 0;
-        }
+    svg {
+      margin-right: 0.4rem;
+      transform: translateY(0.2rem);
     }
-
-    .feature-list {
-        margin-bottom: 2rem;
-
-        li {
-            padding: 0.5rem;
-        }
-
-        svg {
-            margin-right: 0.4rem;
-            transform: translateY(0.2rem);
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 1024px) {
-
-    .feature-item {
-        flex-direction: column;
-    }
+  .feature-item {
+    flex-direction: column;
+  }
 }

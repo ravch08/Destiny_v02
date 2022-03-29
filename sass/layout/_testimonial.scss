@@ -1,39 +1,39 @@
+@use "../abstracts/helper.scss" as h;
+
 #testimonials {
+  .swiper-slide {
+    padding-bottom: 3.5rem;
+  }
 
-    .swiper-slide {
-        padding-bottom: 3.5rem;
-    }
+  img {
+    border-radius: 50%;
+    width: 8.5rem;
+  }
 
-    img {
-        border-radius: 50%;
-        width: 8.5rem;
-    }
+  p {
+    width: 60%;
+    left: 50%;
+    position: relative;
+    margin: 2rem 0 3rem;
+    transform: translateX(-50%);
+  }
 
-    p {
-        width: 60%;
-        left: 50%;
-        position: relative;
-        margin: 2rem 0 3rem;
-        transform: translateX(-50%);
-    }
+  small {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
 
-    small {
-        display: block;
-        margin-bottom: 1.5rem;
-    }
-
-    svg {
-        fill: goldenrod;
-    }
+  svg {
+    fill: goldenrod;
+  }
 }
 
 .swiper-pagination-bullet-active {
-    background-color: $color-primary;
+  background-color: h.$color-primary;
 }
 
 @media screen and (max-width: 1024px) {
-
-    #testimonials p {
-        width: 95%;
-    }
+  #testimonials p {
+    width: 95%;
+  }
 }

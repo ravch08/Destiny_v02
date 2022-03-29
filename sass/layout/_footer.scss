@@ -1,41 +1,43 @@
+@use "../abstracts/helper.scss" as h;
+
 footer {
-    padding: 5rem 0;
-    background-color: $color-light-100;
+  padding: 5rem 0;
+  background-color: h.$color-light-100;
 
-    nav {
-        margin: 1.5rem 0;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-    }
+  nav {
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
 
-    .ftr-link {
-        color: $color-Dark-400;
-        padding: 0 1.2rem;
-    }
+  .ftr-link {
+    color: h.$color-Dark-400;
+    padding: 0 1.2rem;
+  }
 
-    img {
-        width: 4rem;
-        border-radius: 50%;
-    }
+  img {
+    width: 4rem;
+    border-radius: 50%;
+  }
 
-    p {
-        font-size: $fs-icons;
-        letter-spacing: 0.1rem;
-        color: lighten($color: $color-Dark-400, $amount: 20%);
-    }
+  p {
+    font-size: h.$fs-icons;
+    letter-spacing: 0.1rem;
+    color: lighten(h.$color-Dark-400, 20%);
+  }
 }
 
 .scroll-top {
-    width: 4.5rem;
-    height: 4.5rem;
-    border-radius: 5rem;
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-    visibility: visible;
-    fill: $color-light-100;
-    @extend .flexRow-center;
-    background-color: $color-primary;
-    @include transition(visibility, 0.3s);
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 5rem;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  visibility: visible;
+  fill: h.$color-light-100;
+  @extend .flexRow-center;
+  background-color: h.$color-primary;
+  transition: visibility 0.3s ease-in-out;
 }

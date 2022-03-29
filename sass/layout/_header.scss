@@ -1,209 +1,202 @@
-header {
-    width: 100%;
-    padding: 2.5rem 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    @include transition(padding, 0.3s);
+@use "../abstracts/helper.scss" as h;
 
-    .nav-list,
-    .header-wrapper {
-        @extend .flexRow-between;
-        gap: 1rem;
-    }
+header {
+  width: 100%;
+  padding: 2.5rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transition: padding 0.3s ease-in-out;
+
+  .nav-list,
+  .header-wrapper {
+    @extend .flexRow-between;
+    gap: 1rem;
+  }
 }
 
 .sticky {
-    background-color: white;
-    box-shadow: $box-shadow-sm;
-    padding: 1.5rem 0 !important;
+  background-color: white;
+  box-shadow: h.$box-shadow-sm;
+  padding: 1.5rem 0 !important;
 
-    .nav-list .nav-link {
-        color: $color-Dark-800;
-    }
+  .nav-list .nav-link {
+    color: h.$color-Dark-800;
+  }
 
-    .hamburger-menu .line {
-        background-color: $color-Dark-400;
-    }
+  .hamburger-menu .line {
+    background-color: h.$color-Dark-400;
+  }
 }
 
 .nav-list {
+  .nav-item {
+    display: flex;
+  }
 
-    .nav-item {
-        display: flex;
+  .nav-link {
+    padding: 2rem 1rem;
+    color: h.$color-light-100;
+    font-size: h.$fs-subheading;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: h.$color-Dark-100;
     }
-
-    .nav-link {
-        padding: 2rem 1rem;
-        color: $color-light-100;
-        font-size: $fs-subheading;
-        @include transition(color, 0.3s);
-
-        &:hover {
-            color: $color-Dark-100;
-        }
-    }
+  }
 }
 
 .hamburger-menu {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  display: none;
+  @extend .flexColumn-evenly;
+
+  .line {
     width: 3rem;
-    height: 3rem;
-    cursor: pointer;
-    display: none;
-    @extend .flexColumn-evenly;
+    height: 0.2rem;
+    transition: width 0.3s ease-in-out;
+    background-color: h.$color-light-100;
+  }
 
-    .line {
-        width: 3rem;
-        height: 0.2rem;
-        @include transition(width, 0.3s);
-        background-color: $color-light-100;
+  &:hover .line {
+    background-color: h.$color-light-800;
+
+    &:first-child {
+      width: 25%;
     }
 
-    &:hover .line {
-        background-color: $color-light-800;
-
-        &:first-child {
-            width: 25%;
-        }
-
-        &:nth-child(2) {
-            width: 50%;
-        }
+    &:nth-child(2) {
+      width: 50%;
     }
+  }
 }
 
 .sidebar {
-    width: 40%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    background-color: $color-primary;
-    @include transition(right, 0.3s);
+  width: 40%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: h.$color-primary;
+  transition: right 0.3s ease-in-out;
 
-    nav {
-        height: 100%;
-        @extend .flexRow-center;
+  nav {
+    height: 100%;
+    @extend .flexRow-center;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .nav-link {
+      font-size: 1.8rem;
+      padding: 2.5rem;
+      color: h.$color-light-100;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: translateX(1rem);
+      }
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 3%;
+    right: 5%;
+
+    span {
+      font-style: italic;
+      margin-right: 0.3rem;
+      letter-spacing: 0.2rem;
+      color: h.$color-light-100;
     }
 
-    .nav-list {
-        flex-direction: column;
-        align-items: flex-start;
-
-        .nav-link {
-            font-size: 1.8rem;
-            padding: 2.5rem;
-            color: $color-light-100;
-            @include transition(transform, 0.3s);
-
-            &:hover {
-                transform: translateX(1rem);
-            }
-        }
+    svg {
+      fill: h.$color-Dark-100;
+      transform: translateY(0.4rem);
+      transition: transform 0.3s ease-in-out;
     }
 
-    .close {
-        position: absolute;
-        top: 3%;
-        right: 5%;
-
-        span {
-            font-style: italic;
-            margin-right: 0.3rem;
-            letter-spacing: 0.2rem;
-            color: $color-light-100;
-        }
-
-        svg {
-            fill: $color-Dark-100;
-            transform: translateY(0.4rem);
-            @include transition(transform, 0.3s);
-        }
-
-        &:hover svg {
-            fill: $color-light-100;
-            transform: translateY(0.6rem);
-        }
+    &:hover svg {
+      fill: h.$color-light-100;
+      transform: translateY(0.6rem);
     }
+  }
 }
-
-
-
 
 // -- BANNER SECTION ---------------------------------------------------------------------------
 
-
 #banner {
+  position: relative;
+  background-image: url("../../images/hero3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: h.$color-gradient2;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .banner-content {
+    z-index: 1;
+    width: 60%;
+    display: flex;
+    padding: 0 2.5rem;
     position: relative;
-    background-image: url('../../images/hero3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 80vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateY(4rem);
 
-    &::after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-        background: $color-gradient2;
+    h1 {
+      color: h.$color-light-100;
     }
 
-    .container {
-        display: flex;
+    p {
+      margin: 1.5rem 0 2.5rem;
+      color: h.$color-light-100;
     }
-
-    .banner-content {
-        z-index: 1;
-        width: 60%;
-        display: flex;
-        padding: 0 2.5rem;
-        position: relative;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        transform: translateY(4rem);
-
-        h1 {
-            color: $color-light-100;
-        }
-
-        p {
-            margin: 1.5rem 0 2.5rem;
-            color: $color-light-100;
-        }
-    }
+  }
 }
-
-
 
 // -- MEDIA QUERIES ---------------------------------------------------------------------------
 
 @media screen and (max-width: 1024px) {
+  .primary-nav {
+    display: none;
+  }
 
-    .primary-nav {
-        display: none;
-    }
+  .hamburger-menu {
+    display: flex;
+  }
 
-    .hamburger-menu {
-        display: flex;
-    }
-
-    #banner .banner-content {
-        width: 80%;
-    }
+  #banner .banner-content {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  #banner .banner-content {
+    width: 100%;
+  }
 
-    #banner .banner-content {
-        width: 100%;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
+  .sidebar {
+    width: 100%;
+  }
 }

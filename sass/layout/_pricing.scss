@@ -1,5 +1,7 @@
+@use "../abstracts/helper.scss" as h;
+
 #pricing {
-  background-color: $color-light-400;
+  background-color: h.$color-light-400;
 
   .pricing-list {
     @extend .flexRow-evenly;
@@ -12,8 +14,8 @@
   padding: 6rem;
   max-width: 360px;
   border-radius: 0.8rem;
-  box-shadow: $box-shadow-md;
-  background-color: $color-light-400;
+  box-shadow: h.$box-shadow-md;
+  background-color: h.$color-light-400;
 
   img {
     width: 6rem;
@@ -24,7 +26,7 @@
   }
 
   span {
-    font-size: $fs-h2;
+    font-size: h.$fs-h2;
     font-weight: 600;
   }
 
@@ -52,7 +54,7 @@
   }
 
   svg {
-    fill: $color-primary;
+    fill: h.$color-primary;
   }
 
   h3 {
@@ -66,7 +68,7 @@
 }
 
 #newsletter {
-  background-color: $color-light-400;
+  background-color: h.$color-light-400;
 
   .newsletter-input {
     @extend .flexRow-center;
@@ -76,7 +78,7 @@
     border: 0;
     width: 100%;
     padding: 1rem;
-    background-color: $color-light-100;
+    background-color: h.$color-light-100;
 
     &:focus {
       border: none;
@@ -84,7 +86,7 @@
     }
 
     &::placeholder {
-      font-size: $fs-icons;
+      font-size: h.$fs-icons;
     }
   }
 
