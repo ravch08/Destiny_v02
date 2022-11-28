@@ -1,4 +1,4 @@
-@use "../abstracts/helper.scss" as h;
+@use "../abstracts/helper.scss"as h;
 
 .btn-primary {
   display: inline-block;
@@ -15,8 +15,9 @@
 }
 
 .btn-newsletter {
+  border: none;
+  padding: 1.3rem 2.6rem;
   display: inline-block;
-  padding: 1rem 2.6rem;
   color: h.$color-light-100;
   border-radius: 0 0.3rem 0.3rem 0;
   background-color: h.$color-primary;

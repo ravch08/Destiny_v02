@@ -1,4 +1,4 @@
-@use "../abstracts/helper.scss" as h;
+@use "../abstracts/helper.scss"as h;
 
 header {
   width: 100%;
@@ -7,7 +7,7 @@ header {
   top: 0;
   left: 0;
   z-index: 99;
-  transition: padding 0.3s ease-in-out;
+  transition: padding 0.3s ease-in-out, background-color 0.1s ease-in-out;
 
   .nav-list,
   .header-wrapper {
